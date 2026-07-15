@@ -35,3 +35,20 @@ function addHistory(text){
         + history.innerHTML;
 
 }
+
+function openSettings() {
+
+    alert(
+`Rina Camera 設定
+
+🌙 夜間監視
+19:00 ～ 07:00
+
+🔔 通知
+ON
+
+💾 保存期間
+7日`
+    );
+
+}
