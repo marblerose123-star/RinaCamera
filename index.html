@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rina Camera</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>📷 Rina Camera</h1>
+<h1>🐈 Rina Camera</h1>
 
-<div id="video">
+<div class="card">
 
-RTSP映像はここに表示されます
+<h2>状態</h2>
+
+<p id="status">
+🟢 監視停止
+</p>
+
+<button onclick="startMonitor()">
+監視開始
+</button>
+
+<button onclick="stopMonitor()">
+監視停止
+</button>
 
 </div>
 
-<div class="buttons">
+<div class="card">
 
-<button>📷 写真</button>
+<h2>今日の検知</h2>
 
-<button>🔴 録画</button>
+<p>🐈 猫　0件</p>
 
-<button>📂 履歴</button>
+<p>🚶 人　0件</p>
+
+</div>
+
+<div class="card">
+
+<h2>履歴</h2>
+
+<ul id="history">
+
+<li>まだありません</li>
+
+</ul>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
