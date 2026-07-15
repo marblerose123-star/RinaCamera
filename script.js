@@ -55,18 +55,33 @@ function addHistory(text){
 
 function openSettings() {
 
-    alert(
-`Rina Camera 設定
+    const mode = prompt(
+`監視モードを入力してください。
 
-🌙 夜間監視
-19:00 ～ 07:00
-
-🔔 通知
-ON
-
-💾 保存期間
-7日`
+1 = 夜だけ
+2 = 24時間
+3 = 停止`
     );
+
+    const modeText = document.getElementById("mode");
+
+    if (mode === "1") {
+
+        modeText.textContent = "🌙 監視モード：夜だけ";
+
+    }
+
+    else if (mode === "2") {
+
+        modeText.textContent = "☀️ 監視モード：24時間";
+
+    }
+
+    else if (mode === "3") {
+
+        modeText.textContent = "⏸ 監視モード：停止";
+
+    }
 
 }
 
