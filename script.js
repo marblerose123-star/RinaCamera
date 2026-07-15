@@ -1,3 +1,18 @@
+function loadHistory() {
+    const saved = localStorage.getItem("rinaHistory");
+
+    if (saved) {
+        document.getElementById("history").innerHTML = saved;
+    }
+}
+
+function saveHistory() {
+    localStorage.setItem(
+        "rinaHistory",
+        document.getElementById("history").innerHTML
+    );
+}
+
 function startMonitor() {
 
     document.getElementById("status").textContent = "🟢監視中";
@@ -34,6 +49,8 @@ function addHistory(text){
         "<li>"+time+" "+text+"</li>"
         + history.innerHTML;
 
+    saveHistory();
+
 }
 
 function openSettings() {
@@ -52,3 +69,5 @@ ON
     );
 
 }
+
+window.onload = loadHistory;
