@@ -17,8 +17,9 @@ function startMonitor() {
 
     document.getElementById("status").textContent = "🟢監視中";
 
-    addHistory("🐱 テスト検知");
+    addHistory("🐈 猫を検知");
 
+increaseCat();
 }
 
 function stopMonitor() {
