@@ -24,3 +24,15 @@
 - HTML
 - CSS
 - JavaScript
+
+## Ver.0.8
+
+### 追加機能
+
+- camera.js を追加
+- notify.js を追加
+- ai.js を追加
+- カメラ状態表示
+- 通知モジュール
+- AIモジュール
+- バージョン表示
