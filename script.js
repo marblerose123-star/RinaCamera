@@ -194,13 +194,15 @@ function increaseCat(){
 
 // ------------------------------
 
-window.onload=function(){
+window.onload = function(){
 
     loadHistory();
 
     const camera =
-cameraReady();
+    cameraReady();
 
-console.log(camera);
+    console.log(camera);
+
+    aiReady();
 
 };
