@@ -196,6 +196,6 @@ window.onload=function(){
 
     loadHistory();
 
-    loadMode();
+    cameraReady();
 
 };
