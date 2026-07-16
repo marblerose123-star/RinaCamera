@@ -56,6 +56,8 @@ function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
 
+    notify("🐈 猫を検知");
+    
     addHistory("🐈 猫を検知");
 
     increaseCat();
