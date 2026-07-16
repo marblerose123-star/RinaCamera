@@ -93,4 +93,19 @@ function openSettings() {
 
 }
 
+function increaseCat(){
+
+    const cat =
+    document.getElementById("catCount");
+
+    let number =
+    Number(cat.textContent.replace(/[^0-9]/g,""));
+
+    number++;
+
+    cat.textContent =
+    "🐈 猫　" + number + "件";
+
+}
+
 window.onload = loadHistory;
