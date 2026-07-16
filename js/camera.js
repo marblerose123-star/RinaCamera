@@ -5,4 +5,6 @@ function cameraReady() {
 
     console.log("Camera Module Ready");
 
+    return true;
+
 }
