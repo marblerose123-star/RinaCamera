@@ -46,18 +46,28 @@ function addHistory(text){
         +
         now.getMinutes().toString().padStart(2,"0");
 
-    history.innerHTML =
+ history.innerHTML =
+
 `
 <div class="history-card">
 
-<b>${time}</b><br>
+<div class="history-time">
+🕒 ${time}
+</div>
 
+<div>
 ${text}
+</div>
+
+<div class="history-photo">
+📷 画像（準備中）
+</div>
 
 </div>
+
 `
+
 + history.innerHTML;
-    saveHistory();
 
 }
 
