@@ -46,9 +46,16 @@ function addHistory(text){
         now.getMinutes().toString().padStart(2,"0");
 
     history.innerHTML =
-        "<li>"+time+" "+text+"</li>"
-        + history.innerHTML;
+`
+<div class="history-card">
 
+<b>${time}</b><br>
+
+${text}
+
+</div>
+`
++ history.innerHTML;
     saveHistory();
 
 }
