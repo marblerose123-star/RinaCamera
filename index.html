@@ -2,9 +2,13 @@
 <html lang="ja">
 
 <head>
+
 <meta charset="UTF-8">
+
 <title>Rina Camera</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -16,7 +20,7 @@
 <h2>状態</h2>
 
 <p id="status">
-🟢 監視停止
+⚪ 監視停止
 </p>
 
 <p id="mode">
@@ -24,17 +28,29 @@
 </p>
 
 <button onclick="startMonitor()">
-監視開始
+▶ 監視開始
 </button>
 
 <button onclick="stopMonitor()">
-監視停止
+■ 監視停止
 </button>
 
 <button onclick="openSettings()">
 ⚙ 設定
 </button>
-  
+
+</div>
+
+<div class="card">
+
+<h2>📷 ライブ映像</h2>
+
+<div class="camera-box">
+
+ライブ映像は次のバージョンで対応します
+
+</div>
+
 </div>
 
 <div class="card">
@@ -59,7 +75,7 @@
 
 <div class="history-card">
 
-<b>まだ検知はありません</b>
+まだ検知はありません
 
 </div>
 
@@ -68,7 +84,7 @@
 </div>
 
 <script src="script.js"></script>
-  
+
 </body>
 
 </html>
