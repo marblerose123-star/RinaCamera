@@ -196,6 +196,9 @@ window.onload=function(){
 
     loadHistory();
 
-    cameraReady();
+    const camera =
+cameraReady();
+
+console.log(camera);
 
 };
