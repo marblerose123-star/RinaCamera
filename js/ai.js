@@ -6,6 +6,8 @@ function aiReady(){
 }
 function detectObject(){
 
+    console.log("AIで画像を解析中...");
+    
     const testObjects = [
 
         "cat",
