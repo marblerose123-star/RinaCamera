@@ -102,17 +102,15 @@ button:hover{
 
 .history-photo{
 
-    background:#444;
+    width:100%;
 
-    border-radius:8px;
+    max-width:220px;
 
-    padding:10px;
-
-    text-align:center;
+    border-radius:10px;
 
     margin-top:10px;
 
-    color:#aaaaaa;
+    display:block;
 
 }
 
