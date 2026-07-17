@@ -114,11 +114,9 @@ ${text}
 
 </div>
 
-<div class="history-photo">
-
-📷 画像（準備中）
-
-</div>
+<img
+src="images/cat-test.jpg"
+class="history-photo">
 
 </div>
 
