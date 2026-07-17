@@ -56,15 +56,29 @@ function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
 
-    const result = detectObject();
+const result = detectObject();
 
 if(result == "cat"){
 
-    notify("🐈 猫を検知");
+    notify("🐈 チャチャまたはシロを検知");
 
     addHistory("🐈 猫を検知");
 
     increaseCat();
+
+}
+
+else if(result == "person"){
+
+    notify("🚶 人を検知");
+
+    addHistory("🚶 人を検知");
+
+}
+
+else{
+
+    console.log("何も検知しませんでした");
 
 }
 
