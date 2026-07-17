@@ -6,6 +6,22 @@ function aiReady(){
 }
 function detectObject(){
 
-    return "cat";
+    const testObjects = [
+
+        "cat",
+
+        "person",
+
+        "none"
+
+    ];
+
+    const random = Math.floor(
+
+        Math.random() * testObjects.length
+
+    );
+
+    return testObjects[random];
 
 }
