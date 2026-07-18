@@ -56,7 +56,9 @@ function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
 
-const result = detectObject();
+const image = getCameraImage();
+
+const result = detectObject(image);
 
 if(result == "chacha"){
 
