@@ -119,7 +119,25 @@ function addHistory(text){
 
         now.getMinutes().toString().padStart(2,"0");
 
-    history.innerHTML=
+let photo = "images/cat-test.jpg";
+
+if(text.includes("チャチャ")){
+
+    photo = "images/chacha-test.jpg";
+
+}
+else if(text.includes("シロ")){
+
+    photo = "images/shiro-test.jpg";
+
+}
+else if(text.includes("人")){
+
+    photo = "images/person-test.jpg";
+
+}
+
+history.innerHTML=
 
 `
 
