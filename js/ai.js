@@ -7,8 +7,20 @@ function aiReady(){
 
 function detectObject(){
 
-    return "chacha";
+    console.log("AIで画像を解析中...");
+
+    const testObjects = [
+        "chacha",
+        "shiro",
+        "person",
+        "none"
+    ];
+
+    const random =
+        Math.floor(Math.random() * testObjects.length);
+
+    console.log("AI判定:", testObjects[random]);
+
+    return testObjects[random];
 
 }
-
-    
