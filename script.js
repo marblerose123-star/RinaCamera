@@ -156,7 +156,7 @@ ${text}
 </div>
 
 <img
-src="images/cat-test.jpg"
+src="${photo}"
 class="history-photo">
 
 </div>
