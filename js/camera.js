@@ -14,3 +14,11 @@ function cameraReady() {
     return true;
 
 }
+
+function getCameraImage(){
+
+    console.log("カメラ画像を取得");
+
+    return "images/chacha-test.jpg";
+
+}
