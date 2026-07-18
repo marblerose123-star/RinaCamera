@@ -7,10 +7,12 @@ function aiReady(){
 function detectObject(){
 
     console.log("AIで画像を解析中...");
-    
+
     const testObjects = [
 
-        "cat",
+        "chacha",
+
+        "shiro",
 
         "person",
 
@@ -18,11 +20,8 @@ function detectObject(){
 
     ];
 
-    const random = Math.floor(
-
-        Math.random() * testObjects.length
-
-    );
+    const random =
+        Math.floor(Math.random()*testObjects.length);
 
     return testObjects[random];
 
