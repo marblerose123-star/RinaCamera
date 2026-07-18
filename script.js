@@ -58,11 +58,21 @@ function startMonitor(){
 
 const result = detectObject();
 
-if(result == "cat"){
+if(result == "chacha"){
 
-    notify("🐈 チャチャまたはシロを検知");
+    notify("🐈 チャチャを検知");
 
-    addHistory("🐈 猫を検知");
+    addHistory("🐈 チャチャを検知");
+
+    increaseCat();
+
+}
+
+else if(result == "shiro"){
+
+    notify("🤍 シロを検知");
+
+    addHistory("🤍 シロを検知");
 
     increaseCat();
 
@@ -81,7 +91,6 @@ else{
     console.log("何も検知しませんでした");
 
 }
-
 }
 
 function stopMonitor(){
