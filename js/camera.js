@@ -32,6 +32,11 @@ function getCameraImage(){
 const random =
     Math.floor(Math.random()*testImages.length);
 
+const live =
+    document.getElementById("liveCamera");
+
+live.src = testImages[random];
+
 return testImages[random];
 
 }
