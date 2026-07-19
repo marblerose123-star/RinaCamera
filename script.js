@@ -95,16 +95,15 @@ monitorTimer = setInterval(function(){
         notify("🚶 人を検知");
 
         addHistory("🚶 人を検知");
-
-    }
-
-},1000);
+}
 
 else{
 
     console.log("何も検知しませんでした");
 
-}
+    }
+
+},1000);
 }
 
 function stopMonitor(){
