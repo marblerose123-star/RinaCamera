@@ -111,6 +111,10 @@ function stopMonitor(){
 
     document.getElementById("status").textContent="⚪ 監視停止";
 
+    clearInterval(monitorTimer);
+
+    monitorTimer = null;
+
 }
 
 // ------------------------------
