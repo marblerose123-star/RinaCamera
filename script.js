@@ -2,6 +2,8 @@
 // 履歴
 // ------------------------------
 
+let monitorTimer = null;
+
 function loadHistory() {
 
     const saved = localStorage.getItem("rinaHistory");
