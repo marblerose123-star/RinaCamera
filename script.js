@@ -3,7 +3,7 @@
 // ------------------------------
 
 let monitorTimer = null;
-
+let lastResult = "";
 function loadHistory() {
 
     const saved = localStorage.getItem("rinaHistory");
@@ -69,7 +69,13 @@ monitorTimer = setInterval(function(){
     const image = getCameraImage();
 
     const result = detectObject(image);
+if(result === lastResult){
 
+    return;
+
+}
+
+lastResult = result;
     if(result == "chacha"){
 
         notify("🐈 チャチャを検知");
