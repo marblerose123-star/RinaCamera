@@ -19,15 +19,9 @@ function getCameraImage(){
 
     console.log("カメラ画像を取得");
 
-    const testImages = [
+    return "images/chacha-test.jpg";
 
-    "images/chacha-test.jpg",
-
-    "images/shiro-test.jpg",
-
-    "images/person-test.jpg"
-
-];
+}
 
 const random =
     Math.floor(Math.random()*testImages.length);
