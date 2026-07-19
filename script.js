@@ -58,37 +58,47 @@ function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
 
-const image = getCameraImage();
+if(monitorTimer){
 
-const result = detectObject(image);
-
-if(result == "chacha"){
-
-    notify("🐈 チャチャを検知");
-
-    addHistory("🐈 チャチャを検知");
-
-    increaseCat();
+    clearInterval(monitorTimer);
 
 }
 
-else if(result == "shiro"){
+monitorTimer = setInterval(function(){
 
-    notify("🤍 シロを検知");
+    const image = getCameraImage();
 
-    addHistory("🤍 シロを検知");
+    const result = detectObject(image);
 
-    increaseCat();
+    if(result == "chacha"){
 
-}
+        notify("🐈 チャチャを検知");
 
-else if(result == "person"){
+        addHistory("🐈 チャチャを検知");
 
-    notify("🚶 人を検知");
+        increaseCat();
 
-    addHistory("🚶 人を検知");
+    }
 
-}
+    else if(result == "shiro"){
+
+        notify("🤍 シロを検知");
+
+        addHistory("🤍 シロを検知");
+
+        increaseCat();
+
+    }
+
+    else if(result == "person"){
+
+        notify("🚶 人を検知");
+
+        addHistory("🚶 人を検知");
+
+    }
+
+},1000);
 
 else{
 
