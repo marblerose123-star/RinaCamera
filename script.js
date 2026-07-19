@@ -69,6 +69,12 @@ monitorTimer = setInterval(function(){
     const image = getCameraImage();
 
     const result = detectObject(image);
+
+const live =
+    document.getElementById("liveImage");
+
+live.src = image;
+    
 if(result === lastResult){
 
     return;
