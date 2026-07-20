@@ -12,39 +12,24 @@ function detectObject(image){
 
     console.log("解析画像:", image);
 
-if(image.includes("chacha")){
+    if(image.includes("chacha")){
 
-    return "chacha";
+        return "chacha";
 
-}
+    }
 
-if(image.includes("shiro")){
+    if(image.includes("shiro")){
 
-    return "shiro";
+        return "shiro";
 
-}
+    }
 
-if(image.includes("person")){
+    if(image.includes("person")){
 
-    return "person";
+        return "person";
 
-}
+    }
 
-    const testObjects = [
-
-        "chacha",
-
-        "shiro",
-
-        "person",
-
-        "none"
-
-    ];
-
-    const random =
-        Math.floor(Math.random()*testObjects.length);
-
-    return testObjects[random];
+    return "none";
 
 }
