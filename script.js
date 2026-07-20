@@ -107,6 +107,9 @@ lastResult = result;
         notify("🚶 人を検知");
 
         addHistory("🚶 人を検知");
+
+        increasePerson();
+        
 }
 
 else{
@@ -265,6 +268,21 @@ function increaseCat(){
     cat.textContent=
 
     "🐈 猫　"+number+"件";
+
+}
+
+function increasePerson(){
+
+    const person =
+        document.getElementById("personCount");
+
+    let number =
+        Number(person.textContent.replace(/[^0-9]/g,""));
+
+    number++;
+
+    person.textContent =
+        "🚶 人　" + number + "件";
 
 }
 
