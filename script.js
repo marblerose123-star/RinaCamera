@@ -66,14 +66,14 @@ if(monitorTimer){
 
 monitorTimer = setInterval(function(){
 
-    const image = getCameraImage();
+const image = getCameraImage();
 
 const live =
-    document.getElementById("liveImage");
+    document.getElementById("liveCamera");
 
 live.src = image;
     
-    const result = detectObject(image);
+const result = detectObject(image);
     
 if(result === lastResult){
 
