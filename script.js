@@ -155,7 +155,7 @@ else{
 
     }
 
-},1000);
+},cameraConfig.interval);
 }
 
 function stopMonitor(){
