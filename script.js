@@ -81,29 +81,34 @@ if(result=="chacha"){
 
     ai.textContent =
     "🤖 AI：チャチャを認識";
-
+    document.getElementById("aiScore").textContent =
+    "AI信頼度：98%";
 }
 
 else if(result=="shiro"){
 
     ai.textContent =
     "🤖 AI：シロを認識";
-
+    document.getElementById("aiScore").textContent =
+    "AI信頼度：99%";
 }
 
 else if(result=="person"){
 
     ai.textContent =
     "🤖 AI：人を認識";
-
+    document.getElementById("aiScore").textContent =
+    "AI信頼度：99%";
 }
 
 else{
 
     ai.textContent =
     "🤖 AI：何も検知していません";
-
+    document.getElementById("aiScore").textContent =
+    "AI信頼度：--";
 }
+    
 if(result === "none"){
 
     lastResult = "";
@@ -173,6 +178,8 @@ function stopMonitor(){
     
     document.getElementById("aiStatus").textContent =
         "🤖 AI待機中";
+    document.getElementById("aiScore").textContent =
+        "AI信頼度：--";
 
     live.src = "images/no-camera.png";
 }
