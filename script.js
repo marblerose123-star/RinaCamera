@@ -131,6 +131,10 @@ function stopMonitor(){
 
     lastResult = "";
 
+    const live =
+    document.getElementById("liveCamera");
+
+live.src = "images/no-camera.png";
 }
 
 // ------------------------------
