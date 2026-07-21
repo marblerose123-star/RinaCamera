@@ -90,7 +90,7 @@ else if(result=="shiro"){
     ai.textContent =
     "🤖 AI：シロを認識";
     document.getElementById("aiScore").textContent =
-    "AI信頼度：99%";
+    "AI信頼度：96%";
 }
 
 else if(result=="person"){
