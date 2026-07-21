@@ -17,6 +17,16 @@ function cameraReady(){
 
     camera.textContent =
         "📷 カメラ：接続準備完了";
+    
+    const mode =
+        document.getElementById("cameraMode");
+
+    if(cameraConfig.mode=="test"){
+        
+        mode.textContent =
+        "📷 カメラモード：テスト画像";
+
+}
 
     return true;
 
