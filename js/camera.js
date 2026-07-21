@@ -1,4 +1,11 @@
 // Rina Camera
+const cameraConfig = {
+
+    mode: "test",
+
+    interval: 1000
+
+};
 // Camera Control
 
 function cameraReady(){
