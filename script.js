@@ -74,7 +74,36 @@ const live =
 live.src = image;
     
 const result = detectObject(image);
-    
+const ai =
+    document.getElementById("aiStatus");
+
+if(result=="chacha"){
+
+    ai.textContent =
+    "🤖 AI：チャチャを認識";
+
+}
+
+else if(result=="shiro"){
+
+    ai.textContent =
+    "🤖 AI：シロを認識";
+
+}
+
+else if(result=="person"){
+
+    ai.textContent =
+    "🤖 AI：人を認識";
+
+}
+
+else{
+
+    ai.textContent =
+    "🤖 AI：何も検知していません";
+
+}
 if(result === "none"){
 
     lastResult = "";
@@ -140,9 +169,12 @@ function stopMonitor(){
     lastResult = "";
 
     const live =
-    document.getElementById("liveCamera");
+        document.getElementById("liveCamera");
+    
+    document.getElementById("aiStatus").textContent =
+        "🤖 AI待機中";
 
-live.src = "images/no-camera.png";
+    live.src = "images/no-camera.png";
 }
 
 // ------------------------------
