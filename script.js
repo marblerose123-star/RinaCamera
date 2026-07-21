@@ -75,6 +75,14 @@ live.src = image;
     
 const result = detectObject(image);
     
+if(result === "none"){
+
+    lastResult = "";
+
+    return;
+
+}
+
 if(result === lastResult){
 
     return;
