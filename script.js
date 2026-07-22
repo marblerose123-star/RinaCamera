@@ -215,7 +215,9 @@ function openSettings(){
 
 3 = 停止
 
-4 = テスト画像`
+4 = テスト画像
+
+5 = カメラアドレス`
 
     );
 
@@ -246,6 +248,21 @@ function openSettings(){
     alert("テスト画像モードに切り替えました");
 
   }
+
+    else if(mode==="5"){
+
+    const url = prompt(
+        "カメラのアドレスを入力してください");
+
+    if(url){
+
+        cameraConfig.url = url;
+
+        alert("カメラアドレスを保存しました");
+
+    }
+
+}
     
     if(text!=""){
 
