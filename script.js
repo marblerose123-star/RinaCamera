@@ -300,54 +300,6 @@ function openSettings(){
 
 function increaseCat(){
 
-    function updateAIStatus(result){
-
-    const ai =
-        document.getElementById("aiStatus");
-
-    const score =
-        document.getElementById("aiScore");
-
-    if(result=="chacha"){
-
-        ai.textContent =
-        "🤖 AI：チャチャを認識";
-
-        score.textContent =
-        "AI信頼度：98%";
-
-    }
-
-    else if(result=="shiro"){
-
-        ai.textContent =
-        "🤖 AI：シロを認識";
-
-        score.textContent =
-        "AI信頼度：96%";
-
-    }
-
-    else if(result=="person"){
-
-        ai.textContent =
-        "🤖 AI：人を認識";
-
-        score.textContent =
-        "AI信頼度：99%";
-
-    }
-
-    else{
-
-        ai.textContent =
-        "🤖 AI：何も検知していません";
-
-        score.textContent =
-        "AI信頼度：--";
-
-    }
-
     const cat=document.getElementById("catCount");
 
     let number=
@@ -375,6 +327,10 @@ function increasePerson(){
 
     person.textContent =
         "🚶 人　" + number + "件";
+
+}
+
+function updateAIStatus(result){
 
 }
 
