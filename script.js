@@ -197,6 +197,10 @@ class="history-photo">
 
     saveHistory();
 
+    document.getElementById("latestDetect").textContent = text;
+    
+    document.getElementById("latestTime").textContent = time;
+
 }
 
 // ------------------------------
