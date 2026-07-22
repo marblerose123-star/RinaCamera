@@ -3,7 +3,7 @@ const cameraConfig = {
 
     mode: "test",
 
-    interval: 1000
+    interval: 1000,
 
     url:""
 
