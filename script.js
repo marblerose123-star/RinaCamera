@@ -74,16 +74,8 @@ const live =
 live.src = image;
     
 const result = detectObject(image);
-const ai =
-    document.getElementById("aiStatus");
-
-if(result=="chacha"){
-
-    ai.textContent =
-    "🤖 AI：チャチャを認識";
-    document.getElementById("aiScore").textContent =
-    "AI信頼度：98%";
-}
+    
+updateAIStatus(result);
 
 else if(result=="shiro"){
 
@@ -321,7 +313,55 @@ function increaseCat(){
     "🐈 猫　"+number+"件";
 
 }
+function updateAIStatus(result){
 
+    const ai =
+        document.getElementById("aiStatus");
+
+    const score =
+        document.getElementById("aiScore");
+
+    if(result=="chacha"){
+
+        ai.textContent =
+        "🤖 AI：チャチャを認識";
+
+        score.textContent =
+        "AI信頼度：98%";
+
+    }
+
+    else if(result=="shiro"){
+
+        ai.textContent =
+        "🤖 AI：シロを認識";
+
+        score.textContent =
+        "AI信頼度：96%";
+
+    }
+
+    else if(result=="person"){
+
+        ai.textContent =
+        "🤖 AI：人を認識";
+
+        score.textContent =
+        "AI信頼度：99%";
+
+    }
+
+    else{
+
+        ai.textContent =
+        "🤖 AI：何も検知していません";
+
+        score.textContent =
+        "AI信頼度：--";
+
+    }
+
+}
 function increasePerson(){
 
     const person =
