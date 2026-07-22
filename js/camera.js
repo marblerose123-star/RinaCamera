@@ -5,6 +5,8 @@ const cameraConfig = {
 
     interval: 1000
 
+    url:""
+
 };
 // Camera Control
 
