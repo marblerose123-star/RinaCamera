@@ -300,20 +300,7 @@ function openSettings(){
 
 function increaseCat(){
 
-    const cat=document.getElementById("catCount");
-
-    let number=
-
-    Number(cat.textContent.replace(/[^0-9]/g,""));
-
-    number++;
-
-    cat.textContent=
-
-    "🐈 猫　"+number+"件";
-
-}
-function updateAIStatus(result){
+    function updateAIStatus(result){
 
     const ai =
         document.getElementById("aiStatus");
@@ -360,6 +347,20 @@ function updateAIStatus(result){
         "AI信頼度：--";
 
     }
+
+    const cat=document.getElementById("catCount");
+
+    let number=
+
+    Number(cat.textContent.replace(/[^0-9]/g,""));
+
+    number++;
+
+    cat.textContent=
+
+    "🐈 猫　"+number+"件";
+
+}
 
 }
 function increasePerson(){
