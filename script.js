@@ -213,7 +213,9 @@ function openSettings(){
 
 2 = 24時間
 
-3 = 停止`
+3 = 停止
+
+4 = テスト画像`
 
     );
 
@@ -237,6 +239,14 @@ function openSettings(){
 
     }
 
+　　else if(mode==="4"){
+
+    cameraConfig.mode = "test";
+
+    alert("テスト画像モードに切り替えました");
+
+  }
+    
     if(text!=""){
 
         document.getElementById("mode").textContent=text;
