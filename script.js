@@ -58,98 +58,51 @@ function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
 
-if(monitorTimer){
-
-    clearInterval(monitorTimer);
-
-}
-
-monitorTimer = setInterval(function(){
-
-const image = getCameraImage();
-
-const live =
-    document.getElementById("liveCamera");
-
-live.src = image;
+    if(monitorTimer){
+        clearInterval(monitorTimer);
+    　　}
     
-const result = detectObject(image);
+    monitorTimer = setInterval(function(){
+        const image = getCameraImage();
+        const live =
+            document.getElementById("liveCamera");
+        live.src = image;
+        const result = detectObject(image);
+        updateAIStatus(result);
+        
+    if(result === "none"){
     
-updateAIStatus(result);
+        lastResult = "";
+        
+        return;
+    }
 
-else if(result=="shiro"){
+    if(result === lastResult){
+        return;
+    }
 
-    ai.textContent =
-    "🤖 AI：シロを認識";
-    document.getElementById("aiScore").textContent =
-    "AI信頼度：96%";
-}
-
-else if(result=="person"){
-
-    ai.textContent =
-    "🤖 AI：人を認識";
-    document.getElementById("aiScore").textContent =
-    "AI信頼度：99%";
-}
-
-else{
-
-    ai.textContent =
-    "🤖 AI：何も検知していません";
-    document.getElementById("aiScore").textContent =
-    "AI信頼度：--";
-}
+    lastResult = result;
     
-if(result === "none"){
-
-    lastResult = "";
-
-    return;
-
-}
-
-if(result === lastResult){
-
-    return;
-
-}
-
-lastResult = result;
     if(result == "chacha"){
-
         notify("🐈 チャチャを検知");
-
         addHistory("🐈 チャチャを検知");
-
         increaseCat();
-
     }
 
     else if(result == "shiro"){
-
         notify("🤍 シロを検知");
-
         addHistory("🤍 シロを検知");
-
         increaseCat();
-
     }
 
     else if(result == "person"){
-
         notify("🚶 人を検知");
-
         addHistory("🚶 人を検知");
-
         increasePerson();
-        
-}
+    }
 
-else{
-
-    console.log("何も検知しませんでした");
-
+    else{
+        console.log("何も検知しませんでした");
     }
 
 },cameraConfig.interval);
@@ -314,7 +267,6 @@ function increaseCat(){
 
 }
 
-}
 function increasePerson(){
 
     const person =
@@ -331,6 +283,49 @@ function increasePerson(){
 }
 
 function updateAIStatus(result){
+
+    const ai =
+        document.getElementById("aiStatus");
+
+    if(result=="chacha"){
+
+        ai.textContent =
+        "🤖 AI：チャチャを認識";
+
+        document.getElementById("aiScore").textContent =
+        "AI信頼度：98%";
+
+    }
+
+    else if(result=="shiro"){
+
+        ai.textContent =
+        "🤖 AI：シロを認識";
+
+        document.getElementById("aiScore").textContent =
+        "AI信頼度：96%";
+
+    }
+
+    else if(result=="person"){
+
+        ai.textContent =
+        "🤖 AI：人を認識";
+
+        document.getElementById("aiScore").textContent =
+        "AI信頼度：99%";
+
+    }
+
+    else{
+
+        ai.textContent =
+        "🤖 AI：何も検知していません";
+
+        document.getElementById("aiScore").textContent =
+        "AI信頼度：--";
+
+    }
 
 }
 
