@@ -195,7 +195,23 @@ class="history-photo">
 
 +history.innerHTML;
 
-    saveHistory();
+    document.getElementById("todayHistory").innerHTML =
+
+`
+
+<div class="history-card">
+
+🕒 ${time}
+
+<br>
+
+${text}
+
+</div>
+
+`;
+
+saveHistory();
 
     document.getElementById("latestDetect").textContent = text;
     
