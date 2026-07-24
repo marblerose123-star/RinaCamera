@@ -1,11 +1,11 @@
 // Rina Camera
 const cameraConfig = {
 
-    mode: "test",
+    mode: localStorage.getItem("cameraMode") || "test",
 
     interval: 1000,
 
-    url:""
+    url: localStorage.getItem("cameraUrl") || ""
 
 };
 // Camera Control
