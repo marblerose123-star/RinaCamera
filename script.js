@@ -426,21 +426,21 @@ function setMonitorMode(mode){
 
         document.getElementById("mode").textContent =
         "🌙 監視モード：夜だけ";
-
+        saveMode("🌙 監視モード：夜だけ");        
     }
 
     else if(mode=="all"){
 
         document.getElementById("mode").textContent =
         "☀️ 監視モード：24時間";
-
+        saveMode("☀️ 監視モード：24時間");
     }
 
     else{
 
         document.getElementById("mode").textContent =
         "⏸ 監視モード：停止";
-
+        saveMode("⏸ 監視モード：停止");
     }
 
     closeSettings();
