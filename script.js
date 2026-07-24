@@ -86,13 +86,13 @@ function startMonitor(){
     if(result == "chacha"){
         notify("🐈 チャチャを検知");
         addHistory("🐈 チャチャを検知");
-        increaseCat();
+        increaseChacha();
     }
 
     else if(result == "shiro"){
         notify("🤍 シロを検知");
         addHistory("🤍 シロを検知");
-        increaseCat();
+        increaseShiro();
     }
 
     else if(result == "person"){
@@ -249,19 +249,33 @@ function closeSettings(){
 // 猫カウンター
 // ------------------------------
 
-function increaseCat(){
+function increaseChacha(){
 
-    const cat=document.getElementById("catCount");
+    const cat =
+        document.getElementById("chachaCount");
 
-    let number=
-
-    Number(cat.textContent.replace(/[^0-9]/g,""));
+    let number =
+        Number(cat.textContent.replace(/[^0-9]/g,""));
 
     number++;
 
-    cat.textContent=
+    cat.textContent =
+        "🐈 チャチャ　" + number + "件";
 
-    "🐈 猫　"+number+"件";
+}
+
+function increaseShiro(){
+
+    const cat =
+        document.getElementById("shiroCount");
+
+    let number =
+        Number(cat.textContent.replace(/[^0-9]/g,""));
+
+    number++;
+
+    cat.textContent =
+        "🤍 シロ　" + number + "件";
 
 }
 
