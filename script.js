@@ -195,17 +195,27 @@ class="history-photo">
 
 +history.innerHTML;
 
-    document.getElementById("todayHistory").innerHTML =
+document.getElementById("todayHistory").innerHTML =
 
 `
 
 <div class="history-card">
 
+<div class="history-time">
+
 🕒 ${time}
 
-<br>
+</div>
+
+<div>
 
 ${text}
+
+</div>
+
+<img
+src="${photo}"
+class="history-photo">
 
 </div>
 
