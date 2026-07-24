@@ -38,6 +38,12 @@ function getCameraImage(){
 
     console.log("カメラ画像を取得");
 
+    if(cameraConfig.mode == "camera"){
+        
+        return cameraConfig.url;
+
+    }
+    
     const testImages = [
 
         "images/chacha-test.jpg",
@@ -50,7 +56,7 @@ function getCameraImage(){
 
     const random =
         Math.floor(Math.random() * testImages.length);
-
+    
     return testImages[random];
 
 }
