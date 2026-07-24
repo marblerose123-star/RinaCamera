@@ -385,3 +385,16 @@ window.onload = function(){
     aiReady();
 
 };
+
+function setTestMode(){
+
+    cameraConfig.mode = "test";
+
+    document.getElementById("cameraMode").textContent =
+        "📷 カメラモード：テスト画像";
+
+    alert("テスト画像モードに切り替えました");
+
+    closeSettings();
+
+}
