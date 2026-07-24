@@ -361,6 +361,18 @@ function clearHistory(){
 
 }
 
+function openSettings(){
+
+    document.getElementById("settingsDialog").style.display = "block";
+
+}
+
+function closeSettings(){
+
+    document.getElementById("settingsDialog").style.display = "none";
+
+}
+
 window.onload = function(){
 
     loadHistory();
