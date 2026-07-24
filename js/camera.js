@@ -24,9 +24,15 @@ function cameraReady(){
         document.getElementById("cameraMode");
 
     if(cameraConfig.mode=="test"){
-        
-        mode.textContent =
-        "📷 カメラモード：テスト画像";
+
+    mode.textContent =
+    "📷 カメラモード：テスト画像";
+
+}
+else{
+
+    mode.textContent =
+    "📷 カメラモード：カメラ";
 
 }
 
