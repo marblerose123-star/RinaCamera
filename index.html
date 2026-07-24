@@ -154,6 +154,41 @@ class="live-image">
 Rina Camera Ver.1.0
 
 </footer>
+
+<div id="settingsDialog" class="dialog" style="display:none;">
+
+<div class="card">
+
+<h2>⚙️ 設定</h2>
+
+<button onclick="setMonitorMode('night')">
+🌙 夜だけ
+</button>
+
+<button onclick="setMonitorMode('all')">
+☀️ 24時間
+</button>
+
+<button onclick="setMonitorMode('stop')">
+⏸ 停止
+</button>
+
+<button onclick="setTestMode()">
+🧪 テスト画像
+</button>
+
+<button onclick="setCameraUrl()">
+📷 カメラアドレス
+</button>
+
+<button onclick="closeSettings()">
+閉じる
+</button>
+
+</div>
+
+</div> 
+ 
 </body>
 
 </html>
