@@ -284,7 +284,12 @@ function openSettings(){
     else if(mode==="5"){
 
     const url = prompt(
-        "カメラのアドレスを入力してください");
+
+        "カメラのアドレスを入力してください",
+
+        cameraConfig.url
+
+    );
 
     if(url){
 
