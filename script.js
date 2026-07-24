@@ -419,3 +419,30 @@ function setCameraUrl(){
     closeSettings();
 
 }
+
+function setMonitorMode(mode){
+
+    if(mode=="night"){
+
+        document.getElementById("mode").textContent =
+        "🌙 監視モード：夜だけ";
+
+    }
+
+    else if(mode=="all"){
+
+        document.getElementById("mode").textContent =
+        "☀️ 監視モード：24時間";
+
+    }
+
+    else{
+
+        document.getElementById("mode").textContent =
+        "⏸ 監視モード：停止";
+
+    }
+
+    closeSettings();
+
+}
