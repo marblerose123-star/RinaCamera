@@ -431,6 +431,10 @@ function setCameraUrl(){
 
     cameraConfig.url = url;
 
+    cameraConfig.mode = "camera";
+
+    cameraReady();
+
     alert("保存しました");
 
     closeSettings();
