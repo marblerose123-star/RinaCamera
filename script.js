@@ -361,17 +361,20 @@ function clearHistory(){
 
     </div>`;
 
-    document.getElementById("catCount").textContent =
-    "🐈 猫　0件";
+    document.getElementById("chachaCount").textContent =
+        "🐈 チャチャ　0件";
+    
+    document.getElementById("shiroCount").textContent =
+        "🤍 シロ　0件";
 
     document.getElementById("personCount").textContent =
-    "🚶 人　0件";
-
+        "🚶 人　0件";
+    
     document.getElementById("aiStatus").textContent =
-    "🤖 AI待機中";
+        "🤖 AI待機中";
 
     document.getElementById("aiScore").textContent =
-    "AI信頼度：--";
+        "AI信頼度：--";
 
 }
 
