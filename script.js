@@ -249,6 +249,8 @@ function openSettings(){
 
     cameraConfig.mode = "test";
 
+    localStorage.setItem("cameraMode","test");
+
     alert("テスト画像モードに切り替えました");
 
   }
@@ -261,6 +263,8 @@ function openSettings(){
     if(url){
 
         cameraConfig.url = url;
+
+        localStorage.setItem("cameraUrl", url);
 
         alert("カメラアドレスを保存しました");
 
