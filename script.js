@@ -235,81 +235,13 @@ saveHistory();
 
 function openSettings(){
 
-    const mode=prompt(
-
-`監視モード
-
-1 = 夜だけ
-
-2 = 24時間
-
-3 = 停止
-
-4 = テスト画像
-
-5 = カメラアドレス`
-
-    );
-
-    let text="";
-
-    if(mode==="1"){
-
-        text="🌙 監視モード：夜だけ";
-
-    }
-
-    else if(mode==="2"){
-
-        text="☀️ 監視モード：24時間";
-
-    }
-
-    else if(mode==="3"){
-
-        text="⏸ 監視モード：停止";
-
-    }
-
-　　else if(mode==="4"){
-
-    cameraConfig.mode = "test";
-
-    localStorage.setItem("cameraMode","test");
-
-    alert("テスト画像モードに切り替えました");
-
-  }
-
-    else if(mode==="5"){
-
-    const url = prompt(
-
-        "カメラのアドレスを入力してください",
-
-        cameraConfig.url
-
-    );
-
-    if(url){
-
-        cameraConfig.url = url;
-
-        localStorage.setItem("cameraUrl", url);
-
-        alert("カメラアドレスを保存しました");
-
-    }
+    document.getElementById("settingsDialog").style.display = "block";
 
 }
-    
-    if(text!=""){
 
-        document.getElementById("mode").textContent=text;
+function closeSettings(){
 
-        saveMode(text);
-
-    }
+    document.getElementById("settingsDialog").style.display = "none";
 
 }
 
