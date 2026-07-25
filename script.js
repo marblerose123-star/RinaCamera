@@ -420,7 +420,7 @@ function setCameraUrl(){
 
     const url = prompt(
         "カメラアドレスを入力してください",
-        cameraConfig.url || "rtsp://192.168.1.5:554"
+        cameraConfig.url || "rtsp://192.168.1.5:554/live"
     );
 
     if(!url){
