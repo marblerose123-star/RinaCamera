@@ -468,7 +468,7 @@ function setMonitorMode(mode){
 
 }
 
-function openLiveVideo(){
+function openLiveView(){
 
     if(!cameraConfig.url){
 
