@@ -262,6 +262,8 @@ function increaseChacha(){
     cat.textContent =
         "🐈 チャチャ　" + number + "件";
 
+    updateTodayTotal();
+
 }
 
 function increaseShiro(){
@@ -277,6 +279,8 @@ function increaseShiro(){
     cat.textContent =
         "🤍 シロ　" + number + "件";
 
+    updateTodayTotal();
+
 }
 
 function increasePerson(){
@@ -291,6 +295,8 @@ function increasePerson(){
 
     person.textContent =
         "🚶 人　" + number + "件";
+
+    updateTodayTotal();
 
 }
 
