@@ -495,3 +495,22 @@ function openLiveView(){
     }
 
 }
+
+function updateTodayTotal(){
+
+    const cat =
+        Number(
+            document.getElementById("catCount")
+            .textContent.replace(/[^0-9]/g,"")
+        );
+
+    const person =
+        Number(
+            document.getElementById("personCount")
+            .textContent.replace(/[^0-9]/g,"")
+        );
+
+    document.getElementById("todayTotal").textContent =
+        "📊 今日 合計 " + (cat + person) + "件";
+
+}
