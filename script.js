@@ -467,3 +467,24 @@ function setMonitorMode(mode){
     closeSettings();
 
 }
+
+function openLiveView(){
+
+    const url =
+        localStorage.getItem("cameraUrl");
+
+    if(!url){
+
+        alert("カメラアドレスが設定されていません");
+
+        return;
+
+    }
+
+    alert(
+        "ライブ映像\n\n" +
+        url +
+        "\n\nこのアドレスをVLCで開いてください。"
+    );
+
+}
