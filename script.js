@@ -482,9 +482,10 @@ function openLiveView(){
     }
 
     alert(
-        "ライブ映像\n\n" +
-        url +
-        "\n\nこのアドレスをVLCで開いてください。"
-    );
+    "📷 ライブ映像\n\n" +
+    "VLCを開いて\n\n" +
+    url +
+    "\n\nを再生してください。"
+);
 
 }
