@@ -498,9 +498,15 @@ function openLiveView(){
 
 function updateTodayTotal(){
 
-    const cat =
+    const chacha =
         Number(
-            document.getElementById("catCount")
+            document.getElementById("chachaCount")
+            .textContent.replace(/[^0-9]/g,"")
+        );
+
+    const shiro =
+        Number(
+            document.getElementById("shiroCount")
             .textContent.replace(/[^0-9]/g,"")
         );
 
@@ -511,6 +517,6 @@ function updateTodayTotal(){
         );
 
     document.getElementById("todayTotal").textContent =
-        "📊 今日 合計 " + (cat + person) + "件";
+        "📊 今日 合計 " + (chacha + shiro + person) + "件";
 
 }
