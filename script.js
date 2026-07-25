@@ -409,6 +409,32 @@ window.onload = function(){
 
 };
 
+function loadLocalImage(event){
+
+    const file = event.target.files[0];
+
+    if(!file){
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        const image = e.target.result;
+
+        document.getElementById("liveCamera").src = image;
+
+        addHistory("🖼 保存画像を読み込み");
+
+        alert("画像を読み込みました。");
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
 function setTestMode(){
 
     cameraConfig.mode = "test";
