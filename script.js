@@ -468,24 +468,24 @@ function setMonitorMode(mode){
 
 }
 
-function openLiveView(){
+function openLiveVideo(){
 
-    const url =
-        localStorage.getItem("cameraUrl");
+    if(!cameraConfig.url){
 
-    if(!url){
-
-        alert("カメラアドレスが設定されていません");
+        alert("カメラアドレスが設定されていません。");
 
         return;
 
     }
 
-    alert(
-    "📷 ライブ映像\n\n" +
-    "VLCを開いて\n\n" +
-    url +
-    "\n\nを再生してください。"
-);
+    const ok = confirm(
+        "VLCでライブ映像を開きます。\n\nOKを押してください。"
+    );
+
+    if(ok){
+
+        window.location.href = cameraConfig.url;
+
+    }
 
 }
