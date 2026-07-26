@@ -8,9 +8,7 @@ function aiReady(){
 
 function detectObject(image, area){
 
-    console.log("AIで画像を解析中...");
-
-    console.log("解析画像:", image);
+    console.log("AIで画像を解析中...", area);
 
     if(image.includes("chacha")){
 
