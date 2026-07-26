@@ -54,6 +54,18 @@ function saveMode(text){
 // 監視開始
 // ------------------------------
 
+const detectArea = {
+
+    x: 0.03,
+
+    y: 0.60,
+
+    width: 0.90,
+
+    height: 0.40
+
+};
+
 function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
@@ -63,11 +75,22 @@ function startMonitor(){
     　　}
     
     monitorTimer = setInterval(function(){
+        
         const image = getCameraImage();
+
+        function getDetectArea(){
+            return detectArea;
+        }
+ 
         const live =
             document.getElementById("liveCamera");
+        
         live.src = image;
-        const result = detectObject(image);
+        
+        const area = getDetectArea();
+        
+        const result = detectObject(image, area);
+        
         updateAIStatus(result);
         
     if(result === "none"){
