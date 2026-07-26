@@ -6,7 +6,7 @@ function aiReady(){
 
 }
 
-function detectObject(image){
+function detectObject(image, area){
 
     console.log("AIで画像を解析中...");
 
