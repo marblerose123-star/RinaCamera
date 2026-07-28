@@ -104,6 +104,12 @@ function startMonitor(){
     live.src = image;
         
         const area = getDetectArea();
+
+    function getDetectArea(){
+
+    return detectArea;
+
+}
         
         const result = detectObject(image, area);
         
