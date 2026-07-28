@@ -31,3 +31,9 @@ function detectObject(image, area){
     return "none";
 
 }
+
+function runAI(image, area){
+
+    return detectObject(image, area);
+
+}
