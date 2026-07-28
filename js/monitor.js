@@ -29,7 +29,7 @@ function startMonitor(){
 
 }
         
-        const result = detectObject(image, area);
+        const result = runAI(image, area);
         
         updateAIStatus(result);
         
