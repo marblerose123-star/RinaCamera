@@ -46,15 +46,10 @@ function getCameraImage(){
 
     if(cameraConfig.mode == "camera"){
 
-    const live =
-        document.getElementById("liveCamera");
+        return cameraConfig.url;
 
-    live.src = cameraConfig.url;
+    }
 
-    return cameraConfig.url;
-
-}
-    
     const testImages = [
 
         "images/chacha-test.jpg",
@@ -67,7 +62,7 @@ function getCameraImage(){
 
     const random =
         Math.floor(Math.random() * testImages.length);
-    
+
     return testImages[random];
 
 }
