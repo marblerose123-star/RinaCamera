@@ -1,13 +1,19 @@
 // Rina Camera
+
 const cameraConfig = {
 
     mode: localStorage.getItem("cameraMode") || "test",
 
     interval: 1000,
 
-    url: localStorage.getItem("cameraUrl") || ""
+    url: localStorage.getItem("cameraUrl") || "",
+
+    snapshotUrl: localStorage.getItem("snapshotUrl") || "",
+
+    streamType: localStorage.getItem("streamType") || "rtsp"
 
 };
+
 // Camera Control
 
 function cameraReady(){
