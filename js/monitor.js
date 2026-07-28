@@ -2,6 +2,14 @@
 // Monitor Engine
 // ------------------------------
 
+let motionState = {
+
+    detected: false,
+
+    lastImage: null
+
+};
+
 function startMonitor(){
 
     aiState.running = true;
@@ -15,6 +23,8 @@ function startMonitor(){
     monitorTimer = setInterval(function(){
         
     const image = getCameraImage();
+
+    motionState.lastImage = image;
     
     const live =
         document.getElementById("liveCamera");
