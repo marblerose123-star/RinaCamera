@@ -100,7 +100,21 @@ const aiConfig = {
 
 };
 
+let aiState = {
+
+    running: false,
+
+    lastDetect: "none",
+
+    confidence: 0,
+
+    lastTime: ""
+
+};
+
 function startMonitor(){
+
+    aiState.running = true;
 
     document.getElementById("status").textContent="🟢 監視中";
 
@@ -170,6 +184,8 @@ aiConfig.detectInterval);
 }
 
 function stopMonitor(){
+
+    aiState.running = false;
 
     document.getElementById("status").textContent="⚪ 監視停止";
 
