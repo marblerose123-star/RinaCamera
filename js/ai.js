@@ -52,9 +52,25 @@ function preprocessImage(image){
 
 }
 
+const aiFilter = {
+
+    ignoreOther: true,
+
+    minConfidence: 90,
+
+    nightMode: true
+
+};
+
 function postprocessResult(result){
 
     if(result == null){
+
+        return "none";
+
+    }
+
+    if(aiFilter.ignoreOther && result == "other"){
 
         return "none";
 
