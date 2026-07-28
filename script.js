@@ -96,16 +96,12 @@ function startMonitor(){
     
     monitorTimer = setInterval(function(){
         
-        const image = getCameraImage();
-
-if(cameraConfig.mode != "camera"){
-
+    const image = getCameraImage();
+    
     const live =
         document.getElementById("liveCamera");
-
+    
     live.src = image;
-
-}
         
         const area = getDetectArea();
         
