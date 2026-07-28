@@ -66,3 +66,9 @@ function getCameraImage(){
     return testImages[random];
 
 }
+
+function captureFrame(){
+
+    return getCameraImage();
+
+}
