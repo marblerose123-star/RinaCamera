@@ -37,7 +37,10 @@ function runAI(image, area){
     const processedImage =
         preprocessImage(image);
 
-    return detectObject(processedImage, area);
+    const result =
+        detectObject(processedImage, area);
+
+    return postprocessResult(result);
 
 }
 
@@ -46,5 +49,17 @@ function preprocessImage(image){
     console.log("画像前処理開始");
 
     return image;
+
+}
+
+function postprocessResult(result){
+
+    if(result == null){
+
+        return "none";
+
+    }
+
+    return result;
 
 }
