@@ -4,29 +4,6 @@
 
 let monitorTimer = null;
 let lastResult = "";
-function loadHistory() {
-
-    const saved = localStorage.getItem("rinaHistory");
-
-    if(saved){
-
-        document.getElementById("history").innerHTML = saved;
-
-    }
-
-}
-
-function saveHistory(){
-
-    localStorage.setItem(
-
-        "rinaHistory",
-
-        document.getElementById("history").innerHTML
-
-    );
-
-}
 
 // ------------------------------
 // 監視モード
