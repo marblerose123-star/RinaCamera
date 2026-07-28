@@ -214,40 +214,6 @@ function updateAIStatus(result){
 
 // ------------------------------
 
-function clearHistory(){
-
-    if(!confirm("履歴を全部消しますか？")){
-
-        return;
-
-    }
-
-    localStorage.removeItem("rinaHistory");
-
-    document.getElementById("history").innerHTML =
-
-    `<div class="history-card">
-
-    まだ検知はありません
-
-    </div>`;
-
-    document.getElementById("chachaCount").textContent =
-        "🐈 チャチャ　0件";
-    
-    document.getElementById("shiroCount").textContent =
-        "🤍 シロ　0件";
-
-    document.getElementById("personCount").textContent =
-        "🚶 人　0件";
-    
-    document.getElementById("aiStatus").textContent =
-        "🤖 AI待機中";
-
-    document.getElementById("aiScore").textContent =
-        "AI信頼度：--";
-
-}
 
 function openSettings(){
 
