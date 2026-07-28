@@ -22,7 +22,7 @@ function startMonitor(){
     
     monitorTimer = setInterval(function(){
         
-    const image = getCameraImage();
+    const image = captureFrame();
 
     motionState.lastImage = image;
     
