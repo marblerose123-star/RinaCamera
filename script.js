@@ -86,6 +86,20 @@ const aiDatabase = {
 
 };
 
+const aiConfig = {
+
+    detectInterval: 1000,
+
+    confidence: 90,
+
+    detectCats: true,
+
+    detectPeople: true,
+
+    detectOther: false
+
+};
+
 function startMonitor(){
 
     document.getElementById("status").textContent="🟢 監視中";
@@ -151,8 +165,7 @@ function startMonitor(){
     }
 
 },
-                               
-cameraConfig.interval);
+aiConfig.detectInterval);
 
 }
 
