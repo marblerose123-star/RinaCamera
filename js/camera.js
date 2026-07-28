@@ -45,10 +45,15 @@ function getCameraImage(){
     console.log("カメラ画像を取得");
 
     if(cameraConfig.mode == "camera"){
-        
-        return cameraConfig.url;
 
-    }
+    const live =
+        document.getElementById("liveCamera");
+
+    live.src = cameraConfig.url;
+
+    return cameraConfig.url;
+
+}
     
     const testImages = [
 
