@@ -98,14 +98,14 @@ function startMonitor(){
         
         const image = getCameraImage();
 
-        function getDetectArea(){
-            return detectArea;
-        }
- 
-        const live =
-            document.getElementById("liveCamera");
-        
-        live.src = image;
+if(cameraConfig.mode != "camera"){
+
+    const live =
+        document.getElementById("liveCamera");
+
+    live.src = image;
+
+}
         
         const area = getDetectArea();
         
