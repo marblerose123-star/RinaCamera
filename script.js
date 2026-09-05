@@ -43,26 +43,6 @@ const detectArea = {
 
 };
 
-const aiDatabase = {
-
-    chacha: [
-        "images/training/chacha/chacha001.jpg"
-    ],
-
-    shiro: [
-        "images/training/shiro/shiro001.jpg"
-    ],
-
-    person: [
-        "images/training/person/person001.jpg"
-    ],
-
-    other: [
-        "images/training/other/other001.jpg"
-    ]
-
-};
-
 const aiConfig = {
 
     detectInterval: 1000,
