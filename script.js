@@ -261,8 +261,10 @@ function setCameraUrl(){
     }
 
     cameraConfig.url = url;
+    localStorage.setItem("cameraUrl", url);
 
     cameraConfig.mode = "camera";
+    localStorage.setItem("cameraMode", "camera");
 
     cameraReady();
 
