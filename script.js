@@ -45,7 +45,7 @@ const detectArea = {
 
 const aiConfig = {
 
-    detectInterval: 1000,
+    detectInterval: 2000,
 
     confidence: 90,
 
