@@ -10,6 +10,13 @@ let motionState = {
 
 };
 
+let aiProcessing = false;
+
+
+// ------------------------------
+// 監視開始
+// ------------------------------
+
 function startMonitor(){
 
     aiState.running = true;
@@ -23,10 +30,15 @@ function startMonitor(){
 
     }
 
-    monitorTimer = setInterval(function(){
+    monitorTimer = setInterval(async function(){
 
-        // ライブ映像を壊さないため、
-        // video要素のsrcは変更しない
+        // 前のAI解析がまだ終わっている場合は待つ
+        if(aiProcessing){
+
+            return;
+
+        }
+
         const live =
             document.getElementById("liveCamera");
 
@@ -38,68 +50,93 @@ function startMonitor(){
 
         }
 
-        // 現在はAIテスト段階
-        // 実カメラ映像のフレーム取得は次の段階で追加
+        // ライブ映像から1フレーム取得
         const image = captureFrame();
+
+        if(!image){
+
+            return;
+
+        }
 
         motionState.lastImage = image;
 
         const area = getDetectArea();
 
-        const result =
-            runAI(image, area);
+        // AI解析中
+        aiProcessing = true;
 
-        updateAIStatus(result);
+        try{
 
-        if(result === "none"){
+            const result =
+                await runAI(image, area);
 
-            lastResult = "";
+            updateAIStatus(result);
 
-            return;
+            console.log(
+                "ライブ映像AI判定:",
+                result
+            );
+
+            if(result === "none"){
+
+                lastResult = "";
+
+                return;
+
+            }
+
+            if(result === lastResult){
+
+                return;
+
+            }
+
+            lastResult = result;
+
+
+            // ------------------------------
+            // 人
+            // ------------------------------
+
+            if(result == "person"){
+
+                notify("🚶 人を検知");
+
+                addHistory("🚶 人を検知");
+
+                increasePerson();
+
+            }
+
+
+            // ------------------------------
+            // 猫
+            // ------------------------------
+
+            else if(result == "cat"){
+
+                notify("🐈 猫を検知");
+
+                addHistory("🐈 猫を検知");
+
+                // 現段階では猫として記録
+                // チャチャ・シロの個体識別は次の段階
+
+            }
 
         }
+        catch(error){
 
-        if(result === lastResult){
-
-            return;
-
-        }
-
-        lastResult = result;
-
-        if(result == "chacha"){
-
-            notify("🐈 チャチャを検知");
-
-            addHistory("🐈 チャチャを検知");
-
-            increaseChacha();
+            console.error(
+                "AI解析エラー:",
+                error
+            );
 
         }
+        finally{
 
-        else if(result == "shiro"){
-
-            notify("🤍 シロを検知");
-
-            addHistory("🤍 シロを検知");
-
-            increaseShiro();
-
-        }
-
-        else if(result == "person"){
-
-            notify("🚶 人を検知");
-
-            addHistory("🚶 人を検知");
-
-            increasePerson();
-
-        }
-
-        else{
-
-            console.log("何も検知しませんでした");
+            aiProcessing = false;
 
         }
 
@@ -107,11 +144,21 @@ function startMonitor(){
 
 }
 
+
+// ------------------------------
+// 検知エリア
+// ------------------------------
+
 function getDetectArea(){
 
     return detectArea;
 
 }
+
+
+// ------------------------------
+// 監視停止
+// ------------------------------
 
 function stopMonitor(){
 
@@ -126,6 +173,8 @@ function stopMonitor(){
 
     lastResult = "";
 
+    aiProcessing = false;
+
     document.getElementById("aiStatus").textContent =
         "🤖 AI待機中";
 
@@ -133,4 +182,5 @@ function stopMonitor(){
         "AI信頼度：--";
 
     // ライブ映像のsrcは変更しない
+
 }
