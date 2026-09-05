@@ -9,6 +9,8 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
 </head>
 
 <body>
@@ -68,10 +70,14 @@ AI信頼度：--
 
 <div class="live-box">
 
-    <img
+<video
     id="liveCamera"
-    src="images/no-camera.png"
-    class="live-image">
+    class="live-image"
+    controls
+    autoplay
+    muted
+    playsinline>
+</video>
 
     <div id="detectArea">
         <span id="detectLabel">🐈 AI判定エリア</span>
