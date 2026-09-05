@@ -236,6 +236,7 @@ function loadLocalImage(event){
 function setTestMode(){
 
     cameraConfig.mode = "test";
+    localStorage.setItem("cameraMode", "test");
 
     document.getElementById("cameraMode").textContent =
         "📷 カメラモード：テスト画像";
