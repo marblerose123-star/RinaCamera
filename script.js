@@ -145,48 +145,75 @@ function increasePerson(){
 
 }
 
-function updateAIStatus(result){
+function updateAIStatus(result, score){
 
     const ai =
         document.getElementById("aiStatus");
 
-    if(result=="chacha"){
+    const scoreElement =
+        document.getElementById("aiScore");
+
+
+    // ------------------------------
+    // 人
+    // ------------------------------
+
+    if(result === "person"){
 
         ai.textContent =
-        "🤖 AI：チャチャを認識";
-
-        document.getElementById("aiScore").textContent =
-        "AI信頼度：98%";
+            "🤖 AI：人を認識";
 
     }
 
-    else if(result=="shiro"){
+
+    // ------------------------------
+    // 猫
+    // ------------------------------
+
+    else if(result === "cat"){
 
         ai.textContent =
-        "🤖 AI：シロを認識";
-
-        document.getElementById("aiScore").textContent =
-        "AI信頼度：96%";
+            "🤖 AI：猫を認識";
 
     }
 
-    else if(result=="person"){
+
+    // ------------------------------
+    // 何も検知していない
+    // ------------------------------
+
+    else{
 
         ai.textContent =
-        "🤖 AI：人を認識";
+            "🤖 AI：何も検知していません";
 
-        document.getElementById("aiScore").textContent =
-        "AI信頼度：99%";
+        scoreElement.textContent =
+            "AI信頼度：--";
+
+        return;
+
+    }
+
+
+    // ------------------------------
+    // 実際のAI信頼度
+    // ------------------------------
+
+    if(
+        typeof score === "number"
+    ){
+
+        scoreElement.textContent =
+            "AI信頼度：" +
+            Math.round(score * 100) +
+            "%";
 
     }
 
     else{
 
-        ai.textContent =
-        "🤖 AI：何も検知していません";
-
-        document.getElementById("aiScore").textContent =
-        "AI信頼度：--";
+        scoreElement.textContent =
+            "AI信頼度：--";
 
     }
 
