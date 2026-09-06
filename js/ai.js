@@ -135,46 +135,66 @@ async function detectObject(image, area){
         predictions
     );
 
+// ------------------------------
+// 人を検知
+// ------------------------------
 
-    // 人を検知
-    if(aiConfig.detectPeople){
+if(aiConfig.detectPeople){
 
-        const person =
-            predictions.find(function(item){
+    const person =
+        predictions.find(function(item){
 
-                return item.class === "person"
-                    && item.score >= 0.50;
+            return item.class === "person"
+                && item.score >= aiFilter.minConfidence;
 
-            });
+        });
 
-        if(person){
+    if(person){
 
-            return "person";
+        console.log(
+            "人を検知:",
+            Math.round(person.score * 100) + "%"
+        );
 
-        }
-
-    }
-
-
-    // 猫を検知
-    if(aiConfig.detectCats){
-
-        const cat =
-            predictions.find(function(item){
-
-                return item.class === "cat"
-                    && item.score >= 0.50;
-
-            });
-
-        if(cat){
-
-            return "cat";
-
-        }
+        return {
+            type: "person",
+            score: person.score
+        };
 
     }
 
+}
+
+
+// ------------------------------
+// 猫を検知
+// ------------------------------
+
+if(aiConfig.detectCats){
+
+    const cat =
+        predictions.find(function(item){
+
+            return item.class === "cat"
+                && item.score >= aiFilter.minConfidence;
+
+        });
+
+    if(cat){
+
+        console.log(
+            "猫を検知:",
+            Math.round(cat.score * 100) + "%"
+        );
+
+        return {
+            type: "cat",
+            score: cat.score
+        };
+
+    }
+
+}
 
     return "none";
 
@@ -233,7 +253,7 @@ const aiFilter = {
 
     ignoreOther: true,
 
-    minConfidence: 50,
+    minConfidence: 0.30,
 
     nightMode: true
 
