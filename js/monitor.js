@@ -68,63 +68,93 @@ function startMonitor(){
 
         try{
 
-            const result =
-                await runAI(image, area);
-
-            updateAIStatus(result);
-
-            console.log(
-                "ライブ映像AI判定:",
-                result
-            );
-
-            if(result === "none"){
-
-                lastResult = "";
-
-                return;
-
-            }
-
-            if(result === lastResult){
-
-                return;
-
-            }
-
-            lastResult = result;
+  const result =
+    await runAI(image, area);
 
 
-            // ------------------------------
-            // 人
-            // ------------------------------
+// ------------------------------
+// 何も検知しなかった場合
+// ------------------------------
 
-            if(result == "person"){
+if(result === "none"){
 
-                notify("🚶 人を検知");
+    updateAIStatus("none");
 
-                addHistory("🚶 人を検知");
+    lastResult = "";
 
-                increasePerson();
+    console.log(
+        "ライブ映像AI判定: none"
+    );
 
-            }
+    return;
+
+}
 
 
-            // ------------------------------
-            // 猫
-            // ------------------------------
+// ------------------------------
+// AI判定結果
+// ------------------------------
 
-            else if(result == "cat"){
+const type = result.type;
 
-                notify("🐈 猫を検知");
+const score = result.score;
 
-                addHistory("🐈 猫を検知");
+console.log(
+    "ライブ映像AI判定:",
+    type,
+    Math.round(score * 100) + "%"
+);
 
-                // 現段階では猫として記録
-                // チャチャ・シロの個体識別は次の段階
 
-            }
+// ------------------------------
+// AI表示
+// ------------------------------
 
+updateAIStatus(
+    type,
+    score
+);
+
+
+// ------------------------------
+// 同じ検知を連続記録しない
+// ------------------------------
+
+if(type === lastResult){
+
+    return;
+
+}
+
+lastResult = type;
+
+
+// ------------------------------
+// 人
+// ------------------------------
+
+if(type === "person"){
+
+    notify("🚶 人を検知");
+
+    addHistory("🚶 人を検知");
+
+    increasePerson();
+
+}
+
+
+// ------------------------------
+// 猫
+// ------------------------------
+
+else if(type === "cat"){
+
+    notify("🐈 猫を検知");
+
+    addHistory("🐈 猫を検知");
+
+}
         }
         catch(error){
 
