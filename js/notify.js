@@ -90,3 +90,13 @@ function notify(message){
     );
 
 }
+
+function testNotification(){
+
+    console.log("通知テスト実行");
+
+    notify("テスト通知です");
+
+    alert("通知テストを実行しました");
+
+}
