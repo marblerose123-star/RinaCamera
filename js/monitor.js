@@ -137,7 +137,7 @@ if(type === "person"){
 
     notify("🚶 人を検知");
 
-    addHistory("🚶 人を検知");
+    addHistory("🚶 人を検知", image);
 
     increasePerson();
 
@@ -152,7 +152,7 @@ else if(type === "cat"){
 
     notify("🐈 猫を検知");
 
-    addHistory("🐈 猫を検知");
+    addHistory("🐈 猫を検知", image);
 
 }
         }
