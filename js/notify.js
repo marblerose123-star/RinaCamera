@@ -1,14 +1,17 @@
 // Rina Camera
-// Notification Engine
+// Android対応 Notification Engine
+
+let notificationRegistration = null;
 
 
 // ------------------------------
-// 通知の準備
+// 通知準備
 // ------------------------------
 
 async function notificationReady(){
 
-    // このブラウザが通知に対応していない場合
+    console.log("通知システム準備開始");
+
     if(!("Notification" in window)){
 
         console.log("このブラウザは通知に対応していません");
@@ -17,42 +20,69 @@ async function notificationReady(){
 
     }
 
+    if(!("serviceWorker" in navigator)){
 
-    // すでに許可されている
-    if(Notification.permission === "granted"){
-
-        console.log("通知：許可済み");
-
-        return true;
-
-    }
-
-
-    // まだ許可を求めていない
-    if(Notification.permission === "default"){
-
-        const permission =
-            await Notification.requestPermission();
-
-        if(permission === "granted"){
-
-            console.log("通知：許可されました");
-
-            return true;
-
-        }
-
-        console.log("通知：許可されませんでした");
+        console.log("Service Workerに対応していません");
 
         return false;
 
     }
 
 
-    // denied
-    console.log("通知：拒否されています");
+    try{
 
-    return false;
+        notificationRegistration =
+            await navigator.serviceWorker.register("sw.js");
+
+        console.log(
+            "Service Worker登録完了"
+        );
+
+
+        if(Notification.permission === "granted"){
+
+            console.log("通知：許可済み");
+
+            return true;
+
+        }
+
+
+        if(Notification.permission === "default"){
+
+            const permission =
+                await Notification.requestPermission();
+
+            if(permission === "granted"){
+
+                console.log(
+                    "通知：許可されました"
+                );
+
+                return true;
+
+            }
+
+        }
+
+
+        console.log(
+            "通知：許可されていません"
+        );
+
+        return false;
+
+    }
+    catch(error){
+
+        console.error(
+            "通知準備エラー:",
+            error
+        );
+
+        return false;
+
+    }
 
 }
 
@@ -61,12 +91,18 @@ async function notificationReady(){
 // 通知
 // ------------------------------
 
-function notify(message){
+async function notify(message){
 
-    console.log("通知：" + message);
+    console.log(
+        "通知：" + message
+    );
 
 
-    if(!("Notification" in window)){
+    if(!notificationRegistration){
+
+        console.log(
+            "通知システムがまだ準備されていません"
+        );
 
         return;
 
@@ -75,28 +111,59 @@ function notify(message){
 
     if(Notification.permission !== "granted"){
 
-        console.log("通知許可がありません");
+        console.log(
+            "通知許可がありません"
+        );
 
         return;
 
     }
 
 
-    new Notification(
-        "🐈 Rina Camera",
-        {
-            body: message
-        }
-    );
+    try{
+
+        await notificationRegistration.showNotification(
+            "🐈 Rina Camera",
+            {
+                body: message,
+                icon: "images/icon.png",
+                tag: "rina-camera"
+            }
+        );
+
+        console.log(
+            "通知を表示しました"
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "通知表示エラー:",
+            error
+        );
+
+    }
 
 }
 
-function testNotification(){
 
-    console.log("通知テスト実行");
+// ------------------------------
+// 通知テスト
+// ------------------------------
 
-    notify("テスト通知です");
+async function testNotification(){
 
-    alert("通知テストを実行しました");
+    console.log(
+        "通知テスト実行"
+    );
+
+    await notify(
+        "テスト通知です"
+    );
+
+    alert(
+        "通知テストを実行しました"
+    );
 
 }
