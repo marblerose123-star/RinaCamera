@@ -232,6 +232,8 @@ window.onload = function(){
 
     aiReady();
 
+    notificationReady();
+
 };
 
 function loadLocalImage(event){
