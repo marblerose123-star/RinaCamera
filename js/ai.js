@@ -135,6 +135,11 @@ async function detectObject(image, area){
         predictions
     );
 
+    console.log(
+        "AI検出件数:",
+        predictions.length
+    );
+
 // ------------------------------
 // 人を検知
 // ------------------------------
