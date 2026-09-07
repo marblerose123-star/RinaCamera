@@ -33,13 +33,13 @@ function saveMode(text){
 
 const detectArea = {
 
-    x: 0.03,
+    x: 0,
 
-    y: 0.60,
+    y: 0,
 
-    width: 0.90,
+    width: 1,
 
-    height: 0.40
+    height: 1
 
 };
 
