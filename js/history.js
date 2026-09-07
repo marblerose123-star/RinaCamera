@@ -26,101 +26,102 @@ function saveHistory(){
 
 }
 
-function addHistory(text){
 
-    const history=document.getElementById("history");
+// ------------------------------
+// 履歴追加
+// ------------------------------
 
-    const now=new Date();
+function addHistory(text, image){
 
-    const time=
+    const history =
+        document.getElementById("history");
 
+    const now = new Date();
+
+    const time =
         now.getHours().toString().padStart(2,"0")
-
-        +":"
-
+        + ":"
         +
-
         now.getMinutes().toString().padStart(2,"0");
 
-let photo = "images/cat-test.jpg";
 
-if(text.includes("チャチャ")){
+    // 実カメラ画像がある場合はそれを使用
+    // なければ従来のテスト画像を使用
 
-    photo = "images/chacha-test.jpg";
+    let photo = image || "images/cat-test.jpg";
 
-}
-else if(text.includes("シロ")){
 
-    photo = "images/shiro-test.jpg";
+    history.innerHTML =
 
-}
-else if(text.includes("人")){
+    `
 
-    photo = "images/person-test.jpg";
+    <div class="history-card">
 
-}
+        <div class="history-time">
 
-history.innerHTML=
+            🕒 ${time}
 
-`
+        </div>
 
-<div class="history-card">
+        <div>
 
-<div class="history-time">
+            ${text}
 
-🕒 ${time}
+        </div>
 
-</div>
+        <img
+            src="${photo}"
+            class="history-photo">
 
-<div>
+    </div>
 
-${text}
+    `
 
-</div>
+    + history.innerHTML;
 
-<img
-src="${photo}"
-class="history-photo">
 
-</div>
+    document.getElementById("todayHistory").innerHTML =
 
-`
+    `
 
-+history.innerHTML;
+    <div class="history-card">
 
-document.getElementById("todayHistory").innerHTML =
+        <div class="history-time">
 
-`
+            🕒 ${time}
 
-<div class="history-card">
+        </div>
 
-<div class="history-time">
+        <div>
 
-🕒 ${time}
+            ${text}
 
-</div>
+        </div>
 
-<div>
+        <img
+            src="${photo}"
+            class="history-photo">
 
-${text}
+    </div>
 
-</div>
+    `;
 
-<img
-src="${photo}"
-class="history-photo">
 
-</div>
+    saveHistory();
 
-`;
 
-saveHistory();
+    document.getElementById("latestDetect").textContent =
+        text;
 
-    document.getElementById("latestDetect").textContent = text;
-    
-    document.getElementById("latestTime").textContent = time;
+    document.getElementById("latestTime").textContent =
+        time;
 
 }
+
+
+// ------------------------------
+// 履歴削除
+// ------------------------------
 
 function clearHistory(){
 
@@ -136,19 +137,30 @@ function clearHistory(){
 
     `<div class="history-card">
 
-    まだ検知はありません
+        まだ検知はありません
 
     </div>`;
 
+
+    document.getElementById("todayHistory").innerHTML =
+
+    `<div class="history-card">
+
+        まだ検知はありません
+
+    </div>`;
+
+
     document.getElementById("chachaCount").textContent =
         "🐈 チャチャ　0件";
-    
+
     document.getElementById("shiroCount").textContent =
         "🤍 シロ　0件";
 
     document.getElementById("personCount").textContent =
         "🚶 人　0件";
-    
+
+
     document.getElementById("aiStatus").textContent =
         "🤖 AI待機中";
 
