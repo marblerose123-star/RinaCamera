@@ -258,7 +258,7 @@ const aiFilter = {
 
     ignoreOther: true,
 
-    minConfidence: 0.60,
+    minConfidence: 0.50,
 
     nightMode: true
 
